@@ -1,0 +1,181 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+/* Theme handling */
+[data-theme='light'] {
+  background-color: #f0f8ff;
+  color: #222;
+}
+
+[data-theme='dark'] {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: background 0.5s ease;
+}
+
+/* Top bar */
+.top-bar {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 2px solid currentColor;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Input area */
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-group input {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  width: 250px;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #0077ff;
+}
+
+.input-group button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.input-group button:hover {
+  background-color: #005fcc;
+}
+
+/* Weather Box */
+.weather-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.weather-box h2 {
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  text-transform: capitalize;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.temp-humidity p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Error */
+.error {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+/* Weather-based backgrounds */
+.clear {
+  background: linear-gradient(to top, #48c6ef, #6f86d6);
+}
+
+.clouds {
+  background: linear-gradient(to top, #bdc3c7, #2c3e50);
+}
+
+.rain {
+  background: linear-gradient(to top, #2c3e50, #4ca1af);
+}
+
+.snow {
+  background: linear-gradient(to top, #83a4d4, #b6fbff);
+}
+
+.thunderstorm {
+  background: linear-gradient(to top, #283e51, #485563);
+}
+
+.default {
+  background: linear-gradient(to top, #89f7fe, #66a6ff);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group input,
+  .input-group button {
+    width: 90%;
+  }
+
+  .weather-box {
+    width: 90%;
+  }
+}
